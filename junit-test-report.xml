@@ -1,0 +1,233 @@
+<testsuites id="" name="" tests="12" failures="6" skipped="0" errors="0" time="91.42908499999999">
+<testsuite name="Chapter03\03_Tags_Test.spec.ts" timestamp="2026-03-23T11:50:09.199Z" hostname="chromium" tests="2" failures="2" skipped="0" time="60.833" errors="0">
+<testcase name="My First Playwright TypeScript Test 1" classname="Chapter03\03_Tags_Test.spec.ts" time="30.384">
+<failure message="03_Tags_Test.spec.ts:5:5 My First Playwright TypeScript Test 1" type="FAILURE">
+<![CDATA[  [chromium] › Chapter03\03_Tags_Test.spec.ts:5:5 › My First Playwright TypeScript Test 1 @SmokeTesting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' })
+        - waiting for" https://www.google.com/search?q=playwright+by+testers+talk&sca_esv=37e421cff93e3de4&source=hp&ei=9SjBaczlCaKbseMPvZ_O-AE&iflsig=AFdpzrgAAAAAacE3BV0J8K1PJWcwsQvdNRaQPEgzo3px&ved=0ahUKEwiMtNuZ-rWTAxWiT…" navigation to finish...
+        - navigated to "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dplaywright%2Bby%2Btesters%2Btalk%26sca_esv%3D37e421cff93e3de4%26source%3Dhp%26ei%3D9SjBaczlCaKbseMPvZ_O-AE%26iflsig%3DA…"
+
+
+      11 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      12 |     // Click on playlist
+    > 13 |     await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' }).click()
+         |                                                                                                                ^
+      14 |     // Validate web page title
+      15 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      16 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:13:112
+
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="My First Playwright TypeScript Test 2" classname="Chapter03\03_Tags_Test.spec.ts" time="30.449">
+<failure message="03_Tags_Test.spec.ts:18:5 My First Playwright TypeScript Test 2" type="FAILURE">
+<![CDATA[  [chromium] › Chapter03\03_Tags_Test.spec.ts:18:5 › My First Playwright TypeScript Test 2 @SmokeTesting @RegressionTesting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' })
+        - waiting for" https://www.google.com/search?q=playwright+by+testers+talk&sca_esv=37e421cff93e3de4&source=hp&ei=9SjBae7yCdqVseMPgIOq-Ak&iflsig=AFdpzrgAAAAAacE3BVOlKiGw-Pdn8Gc4G3ove98JTLYC&ved=0ahUKEwiuwduZ-rWTAxXaS…" navigation to finish...
+        - navigated to "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dplaywright%2Bby%2Btesters%2Btalk%26sca_esv%3D37e421cff93e3de4%26source%3Dhp%26ei%3D9SjBae7yCdqVseMPgIOq-Ak%26iflsig%3DA…"
+
+
+      24 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      25 |     // Click on playlist
+    > 26 |     await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' }).click()
+         |                                                                                                                ^
+      27 |     // Validate web page title
+      28 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      29 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:26:112
+
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-2-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-2-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="Chapter04\04_TestReports_Test.spec.ts" timestamp="2026-03-23T11:50:09.199Z" hostname="chromium" tests="2" failures="0" skipped="0" time="5.916" errors="0">
+<testcase name="Handling Alerts in playwright" classname="Chapter04\04_TestReports_Test.spec.ts" time="2.967">
+<system-out>
+<![CDATA[Dialog type is = alert
+Alert message is = Sample alert
+]]>
+</system-out>
+</testcase>
+<testcase name="Handling Confirmation in playwright" classname="Chapter04\04_TestReports_Test.spec.ts" time="2.949">
+<system-out>
+<![CDATA[Dialog type is = confirm
+Confirm message is = Are you sure?
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="Chapter03\03_Tags_Test.spec.ts" timestamp="2026-03-23T11:50:09.199Z" hostname="firefox" tests="2" failures="2" skipped="0" time="70.644" errors="0">
+<testcase name="My First Playwright TypeScript Test 1" classname="Chapter03\03_Tags_Test.spec.ts" time="35.277">
+<failure message="03_Tags_Test.spec.ts:5:5 My First Playwright TypeScript Test 1" type="FAILURE">
+<![CDATA[  [firefox] › Chapter03\03_Tags_Test.spec.ts:5:5 › My First Playwright TypeScript Test 1 @SmokeTesting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' })
+        - waiting for" https://www.google.com/search?q=playwright+by+testers+talk&sca_esv=37e421cff93e3de4&source=hp&ei=AynBaYy0Evn5seMPgafDwQU&iflsig=AFdpzrgAAAAAacE3E9DCeAhGmhn5js1JmAUL0smoXnOd&ved=0ahUKEwjMwbqg-rWTAxX5f…" navigation to finish...
+        - navigated to "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dplaywright%2Bby%2Btesters%2Btalk%26sca_esv%3D37e421cff93e3de4%26source%3Dhp%26ei%3DAynBaYy0Evn5seMPgafDwQU%26iflsig%3DA…"
+
+
+      11 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      12 |     // Click on playlist
+    > 13 |     await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' }).click()
+         |                                                                                                                ^
+      14 |     // Validate web page title
+      15 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      16 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:13:112
+
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="My First Playwright TypeScript Test 2" classname="Chapter03\03_Tags_Test.spec.ts" time="35.367">
+<failure message="03_Tags_Test.spec.ts:18:5 My First Playwright TypeScript Test 2" type="FAILURE">
+<![CDATA[  [firefox] › Chapter03\03_Tags_Test.spec.ts:18:5 › My First Playwright TypeScript Test 2 @SmokeTesting @RegressionTesting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'Search' })
+
+
+      21 |
+      22 |     // Search with keywords
+    > 23 |     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
+         |                                                          ^
+      24 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      25 |     // Click on playlist
+      26 |     await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' }).click()
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:23:58
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="Chapter04\04_TestReports_Test.spec.ts" timestamp="2026-03-23T11:50:09.199Z" hostname="firefox" tests="2" failures="0" skipped="0" time="17.127" errors="0">
+<testcase name="Handling Alerts in playwright" classname="Chapter04\04_TestReports_Test.spec.ts" time="11.744">
+<system-out>
+<![CDATA[Dialog type is = alert
+Alert message is = Sample alert
+]]>
+</system-out>
+</testcase>
+<testcase name="Handling Confirmation in playwright" classname="Chapter04\04_TestReports_Test.spec.ts" time="5.383">
+<system-out>
+<![CDATA[Dialog type is = confirm
+Confirm message is = Are you sure?
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="Chapter03\03_Tags_Test.spec.ts" timestamp="2026-03-23T11:50:09.199Z" hostname="webkit" tests="2" failures="2" skipped="0" time="60.385" errors="0">
+<testcase name="My First Playwright TypeScript Test 1" classname="Chapter03\03_Tags_Test.spec.ts" time="30.191">
+<failure message="03_Tags_Test.spec.ts:5:5 My First Playwright TypeScript Test 1" type="FAILURE">
+<![CDATA[  [webkit] › Chapter03\03_Tags_Test.spec.ts:5:5 › My First Playwright TypeScript Test 1 @SmokeTesting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' })
+        - waiting for" https://www.google.com/search?q=playwright+by+testers+talk&sca_esv=37e421cff93e3de4&source=hp&ei=KynBaZjMEtONnesP_v2X-QQ&iflsig=AFdpzrgAAAAAacE3O7BFVNlKyZr_ESVfPoebN2ua9uck&ved=0ahUKEwjYjcSz-rWTAxXTR…" navigation to finish...
+        - navigated to "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dplaywright%2Bby%2Btesters%2Btalk%26sca_esv%3D37e421cff93e3de4%26source%3Dhp%26ei%3DKynBaZjMEtONnesP_v2X-QQ%26iflsig%3DA…"
+
+
+      11 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      12 |     // Click on playlist
+    > 13 |     await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' }).click()
+         |                                                                                                                ^
+      14 |     // Validate web page title
+      15 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      16 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:13:112
+
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="My First Playwright TypeScript Test 2" classname="Chapter03\03_Tags_Test.spec.ts" time="30.194">
+<failure message="03_Tags_Test.spec.ts:18:5 My First Playwright TypeScript Test 2" type="FAILURE">
+<![CDATA[  [webkit] › Chapter03\03_Tags_Test.spec.ts:18:5 › My First Playwright TypeScript Test 2 @SmokeTesting @RegressionTesting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' })
+        - waiting for" https://www.google.com/search?q=playwright+by+testers+talk&sca_esv=37e421cff93e3de4&source=hp&ei=LinBace1E5CdseMPtdG8iQ8&iflsig=AFdpzrgAAAAAacE3PvPU4sUt7fCDhnUL9Fa_bvaECOf-&ved=0ahUKEwjHhPy0-rWTAxWQT…" navigation to finish...
+        - navigated to "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dplaywright%2Bby%2Btesters%2Btalk%26sca_esv%3D37e421cff93e3de4%26source%3Dhp%26ei%3DLinBace1E5CdseMPtdG8iQ8%26iflsig%3DA…"
+
+
+      24 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      25 |     // Click on playlist
+    > 26 |     await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' }).click()
+         |                                                                                                                ^
+      27 |     // Validate web page title
+      28 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      29 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:26:112
+
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-2-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-2-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="Chapter04\04_TestReports_Test.spec.ts" timestamp="2026-03-23T11:50:09.199Z" hostname="webkit" tests="2" failures="0" skipped="0" time="7.125" errors="0">
+<testcase name="Handling Alerts in playwright" classname="Chapter04\04_TestReports_Test.spec.ts" time="3.456">
+<system-out>
+<![CDATA[Dialog type is = alert
+Alert message is = Sample alert
+]]>
+</system-out>
+</testcase>
+<testcase name="Handling Confirmation in playwright" classname="Chapter04\04_TestReports_Test.spec.ts" time="3.669">
+<system-out>
+<![CDATA[Dialog type is = confirm
+Confirm message is = Are you sure?
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
