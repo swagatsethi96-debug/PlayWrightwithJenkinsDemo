@@ -2,7 +2,7 @@
 import { test, expect } from "@playwright/test";
 
 // Write a test
-test('Handling Alerts in playwright', async ({ page }) => {
+test('Handling Alerts in playwright', { tag: 'PlaywrightWithGitHubActions' }, async ({ page }) => {
 
     // Go to URL
     await page.goto('https://www.selenium.dev/documentation/webdriver/interactions/alerts/');
