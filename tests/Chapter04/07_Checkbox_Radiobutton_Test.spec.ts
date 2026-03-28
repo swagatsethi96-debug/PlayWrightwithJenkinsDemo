@@ -2,7 +2,7 @@
 import { test, expect } from "@playwright/test";
 
 // Write a test
-test('Handling Checkbox & Radio buttons in playwright', async ({ page }) => {
+test('Handling Checkbox & Radio buttons in playwright', { tag: '@PlaywrightWithGitHubActionsonAutoYml' }, async ({ page }) => {
 
     // Go to URL
     await page.goto('https://jqueryui.com/checkboxradio/');

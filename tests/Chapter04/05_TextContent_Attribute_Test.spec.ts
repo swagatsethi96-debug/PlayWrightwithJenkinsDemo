@@ -2,7 +2,7 @@
 import { test, expect } from "@playwright/test";
 
 // Write a test
-test('Get Text & Get Attribute value in playwright', async ({ page }) => {
+test('Get Text & Get Attribute value in playwright', {tag: '@PlaywrightWithGitHubActionsonManualYml'} async ({ page }) => {
 
     // Go to URL
     await page.goto('https://github.com/BakkappaN');
