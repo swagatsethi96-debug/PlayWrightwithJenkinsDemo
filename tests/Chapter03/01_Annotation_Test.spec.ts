@@ -2,7 +2,7 @@
 import { test, expect } from "@playwright/test";
 
 // Write a test
-test('Test 1', async ({ page }) => {
+test('Test 1', { tag: '@PlaywrightWithGitHubActions' }, async ({ page }) => {
     // Go to URL
     await page.goto('https://www.google.com/');
 
