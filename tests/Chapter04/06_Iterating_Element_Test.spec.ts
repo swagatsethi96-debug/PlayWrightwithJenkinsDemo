@@ -2,7 +2,7 @@
 import { test, expect } from "@playwright/test";
 
 // Write a test
-test('Iterating matching elements in playwright', { tag: 'PlaywrightWithGitHubActions' }, async ({ page }) => {
+test('Iterating matching elements in playwright', { tag: '@PlaywrightWithGitHubActions' }, async ({ page }) => {
 
     // Go to URL
     await page.goto('https://github.com/BakkappaN');
