@@ -10,7 +10,7 @@ test('Test 1', { tag: '@PlaywrightWithGitHubActions' }, async ({ page }) => {
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     // Click on playlist
-    await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 26.9K+ followers' }).click()
+    await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
     // Validate web page title
     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
 })
@@ -23,7 +23,7 @@ test.skip('Test 2', async ({ page }) => {
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     // Click on playlist
-    await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 26.9K+ followers' }).click()
+    await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
     // Validate web page title
     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
 })
@@ -36,7 +36,7 @@ test.only('Test 3', async ({ page }) => {
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     // Click on playlist
-    await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 26.9K+ followers' }).click()
+    await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
     // Validate web page title
     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
 })
@@ -49,7 +49,7 @@ test.skip('Test 4', async ({ page }) => {
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     // Click on playlist
-    await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 26.9K+ followers' }).click()
+    await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
     // Validate web page title
     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
 })

@@ -10,7 +10,7 @@ test('My First Playwright TypeScript Test 1',{tag : ['@SmokeTesting']}, async ({
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     // Click on playlist
-    await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' }).click()
+    await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
     // Validate web page title
     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
 })
@@ -23,7 +23,7 @@ test('My First Playwright TypeScript Test 2',{tag : ['@SmokeTesting','@Regressio
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     // Click on playlist
-    await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' }).click()
+    await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
     // Validate web page title
     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
 })
@@ -36,7 +36,7 @@ test('My First Playwright TypeScript Test 3',{tag : ['@RegressionTesting']}, asy
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     // Click on playlist
-    await page.getByRole('link', { name: 'Playwright by Testers Talk YouTube · Testers Talk 27K+ followers' }).click()
+    await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
     // Validate web page title
     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
 })
