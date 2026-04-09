@@ -4,7 +4,7 @@ import { test, expect } from "@playwright/test";
 // Write a test
 test('Test 1', { tag: '@PlaywrightWithGitHubActions' }, async ({ page }) => {
     // Go to URL
-    await page.goto('https://www.google.com/');
+    await page.goto('https://duckduckgo.com/');
 
     // Search with keywords
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
@@ -17,7 +17,7 @@ test('Test 1', { tag: '@PlaywrightWithGitHubActions' }, async ({ page }) => {
 
 test.skip('Test 2', async ({ page }) => {
     // Go to URL
-    await page.goto('https://www.google.com/');
+    await page.goto('https://duckduckgo.com/');
 
     // Search with keywords
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
@@ -30,7 +30,7 @@ test.skip('Test 2', async ({ page }) => {
 
 test.only('Test 3', async ({ page }) => {
     // Go to URL
-    await page.goto('https://www.google.com/');
+    await page.goto('https://duckduckgo.com/');
 
     // Search with keywords
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
@@ -43,7 +43,7 @@ test.only('Test 3', async ({ page }) => {
 
 test.skip('Test 4', async ({ page }) => {
     // Go to URL
-    await page.goto('https://www.google.com/');
+    await page.goto('https://duckduckgo.com/');
 
     // Search with keywords
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')

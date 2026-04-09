@@ -17,7 +17,7 @@ test('My First Playwright TypeScript Test 1',{tag : ['@SmokeTesting']}, async ({
 
 test('My First Playwright TypeScript Test 2',{tag : ['@SmokeTesting','@RegressionTesting']}, async ({ page }) => {
     // Go to URL
-    await page.goto('https://www.google.com/');
+    await page.goto('https://duckduckgo.com/');
 
     // Search with keywords
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
@@ -30,7 +30,7 @@ test('My First Playwright TypeScript Test 2',{tag : ['@SmokeTesting','@Regressio
 
 test('My First Playwright TypeScript Test 3',{tag : ['@RegressionTesting']}, async ({ page }) => {
     // Go to URL
-    await page.goto('https://www.google.com/');
+    await page.goto('https://duckduckgo.com/');
 
     // Search with keywords
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')

@@ -5,7 +5,7 @@ test.describe('Smoke Testing', () => {
     // Write a test
     test('Test 1', async ({ page }) => {
         // Go to URL
-        await page.goto('https://www.google.com/');
+        await page.goto('https://duckduckgo.com/');
 
         // Search with keywords
         await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
@@ -20,7 +20,7 @@ test.describe('Smoke Testing', () => {
 test.describe('Regression Testing', () => {
     test('Test 2', async ({ page }) => {
         // Go to URL
-        await page.goto('https://www.google.com/');
+        await page.goto('https://duckduckgo.com/');
 
         // Search with keywords
         await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
@@ -33,7 +33,7 @@ test.describe('Regression Testing', () => {
 
     test('Test 3', async ({ page }) => {
         // Go to URL
-        await page.goto('https://www.google.com/');
+        await page.goto('https://duckduckgo.com/');
 
         // Search with keywords
         await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
@@ -46,7 +46,7 @@ test.describe('Regression Testing', () => {
 
     test('Test 4', async ({ page }) => {
         // Go to URL
-        await page.goto('https://www.google.com/');
+        await page.goto('https://duckduckgo.com/');
 
         // Search with keywords
         await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
