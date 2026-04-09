@@ -1,92 +1,179 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="3" time="14.480411">
-<testsuite name="Chapter03\07_Timeout_Test.spec.ts" timestamp="2026-04-09T15:13:43.207Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.819" errors="1">
-<testcase name="Timeout test" classname="Chapter03\07_Timeout_Test.spec.ts" time="8.819">
+<testsuites id="" name="" tests="9" failures="0" skipped="0" errors="5" time="45.270776">
+<testsuite name="Chapter03\03_Tags_Test.spec.ts" timestamp="2026-04-09T16:10:13.144Z" hostname="chromium" tests="3" failures="0" skipped="0" time="40.688" errors="1">
+<testcase name="My First Playwright TypeScript Test 1" classname="Chapter03\03_Tags_Test.spec.ts" time="30.082">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\Chapter03-07_Timeout_Test-Timeout-test-chromium\error-context.md]]
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-chromium\error-context.md]]
 ]]>
 </system-out>
-<error message="locator.click: Timeout 3000ms exceeded." type="TimeoutError">
-<![CDATA[  [chromium] › Chapter03\07_Timeout_Test.spec.ts:3:5 › Timeout test › Click on Sign-in ─────────────
+<error message="Test timeout of 30000ms exceeded." type="Error">
+<![CDATA[  [chromium] › Chapter03\03_Tags_Test.spec.ts:5:5 › My First Playwright TypeScript Test 1 @SmokeTesting 
 
-    TimeoutError: locator.click: Timeout 3000ms exceeded.
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
     Call log:
-      - waiting for getByRole('button', { name: 'Sign my in', exact: true })
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })
 
 
-      15 |   })
-      16 |   await test.step('Click on Sign-in', async () => {
-    > 17 |     await page.getByRole('button', { name: 'Sign my in', exact: true }).click({timeout : 3000});
-         |                                                                         ^
-      18 |   })
-      19 |   await test.step('Validate error message', async () => {
-      20 |     await expect(page.getByRole('alert')).toContainText('Incorrect my username or password.', {timeout : 5000});
-        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\07_Timeout_Test.spec.ts:17:73
-        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\07_Timeout_Test.spec.ts:16:3
+      11 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      12 |     // Click on playlist
+    > 13 |     await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
+         |                                                                                    ^
+      14 |     // Validate web page title
+      15 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      16 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:13:84
 
-    Error Context: ..\test-results\Chapter03-07_Timeout_Test-Timeout-test-chromium\error-context.md
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="My First Playwright TypeScript Test 2" classname="Chapter03\03_Tags_Test.spec.ts" time="5.408">
+</testcase>
+<testcase name="My First Playwright TypeScript Test 3" classname="Chapter03\03_Tags_Test.spec.ts" time="5.198">
+</testcase>
+</testsuite>
+<testsuite name="Chapter03\03_Tags_Test.spec.ts" timestamp="2026-04-09T16:10:13.144Z" hostname="firefox" tests="3" failures="0" skipped="0" time="92.215" errors="3">
+<testcase name="My First Playwright TypeScript Test 1" classname="Chapter03\03_Tags_Test.spec.ts" time="30.242">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded." type="Error">
+<![CDATA[  [firefox] › Chapter03\03_Tags_Test.spec.ts:5:5 › My First Playwright TypeScript Test 1 @SmokeTesting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })
+        - waiting for" https://www.google.com/search?q=playwright+by+testers+talk&sca_esv=e8481ae40804fa8e&source=hp&ei=bM_XaaVW-uTaug-Sj5vhBg&iflsig=AFdpzrgAAAAAadfdfGrHwiowGoZqNs6Y09QruPbTL3bP&ved=0ahUKEwilvIeGlOGTAxV6sl…" navigation to finish...
+        - navigated to "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dplaywright%2Bby%2Btesters%2Btalk%26sca_esv%3De8481ae40804fa8e%26source%3Dhp%26ei%3DbM_XaaVW-uTaug-Sj5vhBg%26iflsig%3DAF…"
+
+
+      11 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      12 |     // Click on playlist
+    > 13 |     await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
+         |                                                                                    ^
+      14 |     // Validate web page title
+      15 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      16 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:13:84
+
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="My First Playwright TypeScript Test 2" classname="Chapter03\03_Tags_Test.spec.ts" time="30.93">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-2-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded." type="Error">
+<![CDATA[  [firefox] › Chapter03\03_Tags_Test.spec.ts:18:5 › My First Playwright TypeScript Test 2 @SmokeTesting @RegressionTesting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })
+        - locator resolved to <a rel="noopener" target="_self" data-testid="result-title-a" data-handled-by-react="true" class="eVNpHGjtxRBq_gLOfGDr LQNqh2U1kzYxREs65IJu" href="https://www.youtube.com/playlist?list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM">…</a>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - performing click action
+
+
+      24 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      25 |     // Click on playlist
+    > 26 |     await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
+         |                                                                                    ^
+      27 |     // Validate web page title
+      28 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      29 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:26:84
+
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-2-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="My First Playwright TypeScript Test 3" classname="Chapter03\03_Tags_Test.spec.ts" time="31.043">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-3-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded." type="Error">
+<![CDATA[  [firefox] › Chapter03\03_Tags_Test.spec.ts:31:5 › My First Playwright TypeScript Test 3 @RegressionTesting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })
+        - locator resolved to <a rel="noopener" target="_self" data-testid="result-title-a" data-handled-by-react="true" class="eVNpHGjtxRBq_gLOfGDr LQNqh2U1kzYxREs65IJu" href="https://www.youtube.com/playlist?list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM">…</a>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - performing click action
+
+
+      37 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      38 |     // Click on playlist
+    > 39 |     await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
+         |                                                                                    ^
+      40 |     // Validate web page title
+      41 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      42 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:39:84
+
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-3-firefox\error-context.md
 ]]>
 </error>
 </testcase>
 </testsuite>
-<testsuite name="Chapter03\07_Timeout_Test.spec.ts" timestamp="2026-04-09T15:13:43.207Z" hostname="firefox" tests="1" failures="0" skipped="0" time="9.222" errors="1">
-<testcase name="Timeout test" classname="Chapter03\07_Timeout_Test.spec.ts" time="9.222">
+<testsuite name="Chapter03\03_Tags_Test.spec.ts" timestamp="2026-04-09T16:10:13.144Z" hostname="webkit" tests="3" failures="0" skipped="0" time="42.113" errors="1">
+<testcase name="My First Playwright TypeScript Test 1" classname="Chapter03\03_Tags_Test.spec.ts" time="30.09">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\Chapter03-07_Timeout_Test-Timeout-test-firefox\error-context.md]]
+[[ATTACHMENT|test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-webkit\error-context.md]]
 ]]>
 </system-out>
-<error message="locator.click: Timeout 3000ms exceeded." type="TimeoutError">
-<![CDATA[  [firefox] › Chapter03\07_Timeout_Test.spec.ts:3:5 › Timeout test › Click on Sign-in ──────────────
+<error message="Test timeout of 30000ms exceeded." type="Error">
+<![CDATA[  [webkit] › Chapter03\03_Tags_Test.spec.ts:5:5 › My First Playwright TypeScript Test 1 @SmokeTesting 
 
-    TimeoutError: locator.click: Timeout 3000ms exceeded.
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
     Call log:
-      - waiting for getByRole('button', { name: 'Sign my in', exact: true })
+      - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })
+        - waiting for" https://www.google.com/search?q=playwright+by+testers+talk&sca_esv=e8481ae40804fa8e&source=hp&ei=dM_XaYCVKtSNvr0P7quYsQE&iflsig=AFdpzrgAAAAAadfdhJgzMXTOrIkrLAzXJHEIOeW8EoEc&ved=0ahUKEwiAn5mKlOGTAxXUh…" navigation to finish...
+        - navigated to "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dplaywright%2Bby%2Btesters%2Btalk%26sca_esv%3De8481ae40804fa8e%26source%3Dhp%26ei%3DdM_XaYCVKtSNvr0P7quYsQE%26iflsig%3DA…"
 
 
-      15 |   })
-      16 |   await test.step('Click on Sign-in', async () => {
-    > 17 |     await page.getByRole('button', { name: 'Sign my in', exact: true }).click({timeout : 3000});
-         |                                                                         ^
-      18 |   })
-      19 |   await test.step('Validate error message', async () => {
-      20 |     await expect(page.getByRole('alert')).toContainText('Incorrect my username or password.', {timeout : 5000});
-        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\07_Timeout_Test.spec.ts:17:73
-        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\07_Timeout_Test.spec.ts:16:3
+      11 |     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
+      12 |     // Click on playlist
+    > 13 |     await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
+         |                                                                                    ^
+      14 |     // Validate web page title
+      15 |     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
+      16 | })
+        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\03_Tags_Test.spec.ts:13:84
 
-    Error Context: ..\test-results\Chapter03-07_Timeout_Test-Timeout-test-firefox\error-context.md
+    Error Context: ..\test-results\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-webkit\error-context.md
 ]]>
 </error>
 </testcase>
-</testsuite>
-<testsuite name="Chapter03\07_Timeout_Test.spec.ts" timestamp="2026-04-09T15:13:43.207Z" hostname="webkit" tests="1" failures="0" skipped="0" time="12.764" errors="1">
-<testcase name="Timeout test" classname="Chapter03\07_Timeout_Test.spec.ts" time="12.764">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\Chapter03-07_Timeout_Test-Timeout-test-webkit\error-context.md]]
-]]>
-</system-out>
-<error message="locator.click: Timeout 3000ms exceeded." type="TimeoutError">
-<![CDATA[  [webkit] › Chapter03\07_Timeout_Test.spec.ts:3:5 › Timeout test › Click on Sign-in ───────────────
-
-    TimeoutError: locator.click: Timeout 3000ms exceeded.
-    Call log:
-      - waiting for getByRole('button', { name: 'Sign my in', exact: true })
-
-
-      15 |   })
-      16 |   await test.step('Click on Sign-in', async () => {
-    > 17 |     await page.getByRole('button', { name: 'Sign my in', exact: true }).click({timeout : 3000});
-         |                                                                         ^
-      18 |   })
-      19 |   await test.step('Validate error message', async () => {
-      20 |     await expect(page.getByRole('alert')).toContainText('Incorrect my username or password.', {timeout : 5000});
-        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\07_Timeout_Test.spec.ts:17:73
-        at C:\Users\swaga\Documents\PlayWright_Pipeline\tests\Chapter03\07_Timeout_Test.spec.ts:16:3
-
-    Error Context: ..\test-results\Chapter03-07_Timeout_Test-Timeout-test-webkit\error-context.md
-]]>
-</error>
+<testcase name="My First Playwright TypeScript Test 2" classname="Chapter03\03_Tags_Test.spec.ts" time="7.087">
+</testcase>
+<testcase name="My First Playwright TypeScript Test 3" classname="Chapter03\03_Tags_Test.spec.ts" time="4.936">
 </testcase>
 </testsuite>
 </testsuites>

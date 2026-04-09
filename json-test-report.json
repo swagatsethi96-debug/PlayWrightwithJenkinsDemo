@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 6
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 6
         },
         "id": "chromium",
         "name": "chromium",
@@ -36,7 +36,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 6
         },
         "id": "firefox",
         "name": "firefox",
@@ -52,7 +52,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 6
         },
         "id": "webkit",
         "name": "webkit",
@@ -100,23 +100,25 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.59.1",
-    "workers": 8,
+    "workers": 6,
     "webServer": null
   },
   "suites": [
     {
-      "title": "Chapter03\\07_Timeout_Test.spec.ts",
-      "file": "Chapter03/07_Timeout_Test.spec.ts",
+      "title": "Chapter03\\03_Tags_Test.spec.ts",
+      "file": "Chapter03/03_Tags_Test.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Timeout test",
+          "title": "My First Playwright TypeScript Test 1",
           "ok": false,
-          "tags": [],
+          "tags": [
+            "SmokeTesting"
+          ],
           "tests": [
             {
-              "timeout": 60000,
+              "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "chromium",
@@ -125,253 +127,424 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "failed",
-                  "duration": 8819,
+                  "status": "timedOut",
+                  "duration": 30082,
                   "error": {
-                    "message": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n",
-                    "stack": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:17:73\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:16:3",
-                    "location": {
-                      "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                      "column": 73,
-                      "line": 17
-                    },
-                    "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on Sign-in'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Sign my in'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick({timeout \u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m   })\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Validate error message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'alert'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Incorrect my username or password.'\u001b[39m\u001b[33m,\u001b[39m {timeout \u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m})\u001b[33m;\u001b[39m\u001b[0m"
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                   },
                   "errors": [
                     {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
                       "location": {
-                        "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                        "column": 73,
-                        "line": 17
+                        "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts",
+                        "column": 84,
+                        "line": 13
                       },
-                      "message": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n\n\n\u001b[0m \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on Sign-in'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Sign my in'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick({timeout \u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m   })\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Validate error message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'alert'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Incorrect my username or password.'\u001b[39m\u001b[33m,\u001b[39m {timeout \u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m})\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:17:73\u001b[22m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:16:3\u001b[22m"
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })\u001b[22m\n\n\n\u001b[0m \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'combobox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Search'\u001b[39m })\u001b[33m.\u001b[39mpress(\u001b[32m'Enter'\u001b[39m)\n \u001b[90m 12 |\u001b[39m     \u001b[90m// Click on playlist\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Playwright by Testers Talk - YouTube'\u001b[39m })\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Validate web page title\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[32m'Playwright by Testers Talk ✅ - YouTube'\u001b[39m)\n \u001b[90m 16 |\u001b[39m })\u001b[0m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts:13:84\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Navigating to URL",
-                      "duration": 5219
-                    },
-                    {
-                      "title": "Enter Username & Password",
-                      "duration": 326
-                    },
-                    {
-                      "title": "Click on Sign-in",
-                      "duration": 3017,
-                      "error": {
-                        "message": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:17:73\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:16:3",
-                        "location": {
-                          "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                          "column": 73,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on Sign-in'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Sign my in'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick({timeout \u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m   })\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Validate error message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'alert'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Incorrect my username or password.'\u001b[39m\u001b[33m,\u001b[39m {timeout \u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m})\u001b[33m;\u001b[39m\u001b[0m"
-                      }
-                    }
-                  ],
-                  "startTime": "2026-04-09T15:13:44.587Z",
+                  "startTime": "2026-04-09T16:10:14.030Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\test-results\\Chapter03-07_Timeout_Test-Timeout-test-chromium\\error-context.md"
+                      "path": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\test-results\\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-chromium\\error-context.md"
                     }
-                  ],
-                  "errorLocation": {
-                    "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                    "column": 73,
-                    "line": 17
-                  }
+                  ]
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "c202adc94d58ae27034b-3c2179a4917d1ea72242",
-          "file": "Chapter03/07_Timeout_Test.spec.ts",
-          "line": 3,
+          "id": "6f45f7061ec11dc1ff7c-15231d707f277756991a",
+          "file": "Chapter03/03_Tags_Test.spec.ts",
+          "line": 5,
           "column": 5
         },
         {
-          "title": "Timeout test",
-          "ok": false,
-          "tags": [],
+          "title": "My First Playwright TypeScript Test 2",
+          "ok": true,
+          "tags": [
+            "SmokeTesting",
+            "RegressionTesting"
+          ],
           "tests": [
             {
-              "timeout": 60000,
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5408,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-09T16:10:14.078Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6f45f7061ec11dc1ff7c-6f149cc08a00b954d2a0",
+          "file": "Chapter03/03_Tags_Test.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "My First Playwright TypeScript Test 3",
+          "ok": true,
+          "tags": [
+            "RegressionTesting"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 5198,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-09T16:10:14.096Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6f45f7061ec11dc1ff7c-5e3fa8320fcf7971ff63",
+          "file": "Chapter03/03_Tags_Test.spec.ts",
+          "line": 31,
+          "column": 5
+        },
+        {
+          "title": "My First Playwright TypeScript Test 1",
+          "ok": false,
+          "tags": [
+            "SmokeTesting"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "firefox",
               "projectName": "firefox",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "failed",
-                  "duration": 9222,
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "timedOut",
+                  "duration": 30242,
                   "error": {
-                    "message": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n",
-                    "stack": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:17:73\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:16:3",
-                    "location": {
-                      "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                      "column": 73,
-                      "line": 17
-                    },
-                    "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on Sign-in'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Sign my in'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick({timeout \u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m   })\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Validate error message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'alert'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Incorrect my username or password.'\u001b[39m\u001b[33m,\u001b[39m {timeout \u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m})\u001b[33m;\u001b[39m\u001b[0m"
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                   },
                   "errors": [
                     {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
                       "location": {
-                        "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                        "column": 73,
-                        "line": 17
+                        "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts",
+                        "column": 84,
+                        "line": 13
                       },
-                      "message": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n\n\n\u001b[0m \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on Sign-in'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Sign my in'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick({timeout \u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m   })\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Validate error message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'alert'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Incorrect my username or password.'\u001b[39m\u001b[33m,\u001b[39m {timeout \u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m})\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:17:73\u001b[22m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:16:3\u001b[22m"
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })\u001b[22m\n\u001b[2m    - waiting for\" https://www.google.com/search?q=playwright+by+testers+talk&sca_esv=e8481ae40804fa8e&source=hp&ei=bM_XaaVW-uTaug-Sj5vhBg&iflsig=AFdpzrgAAAAAadfdfGrHwiowGoZqNs6Y09QruPbTL3bP&ved=0ahUKEwilvIeGlOGTAxV6sl…\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dplaywright%2Bby%2Btesters%2Btalk%26sca_esv%3De8481ae40804fa8e%26source%3Dhp%26ei%3DbM_XaaVW-uTaug-Sj5vhBg%26iflsig%3DAF…\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'combobox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Search'\u001b[39m })\u001b[33m.\u001b[39mpress(\u001b[32m'Enter'\u001b[39m)\n \u001b[90m 12 |\u001b[39m     \u001b[90m// Click on playlist\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Playwright by Testers Talk - YouTube'\u001b[39m })\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Validate web page title\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[32m'Playwright by Testers Talk ✅ - YouTube'\u001b[39m)\n \u001b[90m 16 |\u001b[39m })\u001b[0m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts:13:84\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Navigating to URL",
-                      "duration": 4412
-                    },
-                    {
-                      "title": "Enter Username & Password",
-                      "duration": 609
-                    },
-                    {
-                      "title": "Click on Sign-in",
-                      "duration": 3020,
-                      "error": {
-                        "message": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:17:73\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:16:3",
-                        "location": {
-                          "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                          "column": 73,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on Sign-in'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Sign my in'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick({timeout \u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m   })\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Validate error message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'alert'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Incorrect my username or password.'\u001b[39m\u001b[33m,\u001b[39m {timeout \u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m})\u001b[33m;\u001b[39m\u001b[0m"
-                      }
-                    }
-                  ],
-                  "startTime": "2026-04-09T15:13:44.567Z",
+                  "startTime": "2026-04-09T16:10:14.038Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\test-results\\Chapter03-07_Timeout_Test-Timeout-test-firefox\\error-context.md"
+                      "path": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\test-results\\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-firefox\\error-context.md"
                     }
-                  ],
-                  "errorLocation": {
-                    "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                    "column": 73,
-                    "line": 17
-                  }
+                  ]
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "c202adc94d58ae27034b-6e1df8cda20132eeffe6",
-          "file": "Chapter03/07_Timeout_Test.spec.ts",
-          "line": 3,
+          "id": "6f45f7061ec11dc1ff7c-f34ebca24d2bfd628c44",
+          "file": "Chapter03/03_Tags_Test.spec.ts",
+          "line": 5,
           "column": 5
         },
         {
-          "title": "Timeout test",
+          "title": "My First Playwright TypeScript Test 2",
           "ok": false,
-          "tags": [],
+          "tags": [
+            "SmokeTesting",
+            "RegressionTesting"
+          ],
           "tests": [
             {
-              "timeout": 60000,
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 4,
+                  "status": "timedOut",
+                  "duration": 30930,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts",
+                        "column": 84,
+                        "line": 26
+                      },
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })\u001b[22m\n\u001b[2m    - locator resolved to <a rel=\"noopener\" target=\"_self\" data-testid=\"result-title-a\" data-handled-by-react=\"true\" class=\"eVNpHGjtxRBq_gLOfGDr LQNqh2U1kzYxREs65IJu\" href=\"https://www.youtube.com/playlist?list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM\">…</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\n\n\u001b[0m \u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'combobox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Search'\u001b[39m })\u001b[33m.\u001b[39mpress(\u001b[32m'Enter'\u001b[39m)\n \u001b[90m 25 |\u001b[39m     \u001b[90m// Click on playlist\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Playwright by Testers Talk - YouTube'\u001b[39m })\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[90m// Validate web page title\u001b[39m\n \u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[32m'Playwright by Testers Talk ✅ - YouTube'\u001b[39m)\n \u001b[90m 29 |\u001b[39m })\u001b[0m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts:26:84\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-09T16:10:14.086Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\test-results\\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-2-firefox\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6f45f7061ec11dc1ff7c-f5563058196b6b43ba7a",
+          "file": "Chapter03/03_Tags_Test.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "My First Playwright TypeScript Test 3",
+          "ok": false,
+          "tags": [
+            "RegressionTesting"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 5,
+                  "status": "timedOut",
+                  "duration": 31043,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts",
+                        "column": 84,
+                        "line": 39
+                      },
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })\u001b[22m\n\u001b[2m    - locator resolved to <a rel=\"noopener\" target=\"_self\" data-testid=\"result-title-a\" data-handled-by-react=\"true\" class=\"eVNpHGjtxRBq_gLOfGDr LQNqh2U1kzYxREs65IJu\" href=\"https://www.youtube.com/playlist?list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM\">…</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\n\n\u001b[0m \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'combobox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Search'\u001b[39m })\u001b[33m.\u001b[39mpress(\u001b[32m'Enter'\u001b[39m)\n \u001b[90m 38 |\u001b[39m     \u001b[90m// Click on playlist\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 39 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Playwright by Testers Talk - YouTube'\u001b[39m })\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 40 |\u001b[39m     \u001b[90m// Validate web page title\u001b[39m\n \u001b[90m 41 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[32m'Playwright by Testers Talk ✅ - YouTube'\u001b[39m)\n \u001b[90m 42 |\u001b[39m })\u001b[0m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts:39:84\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-09T16:10:14.149Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\test-results\\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-3-firefox\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6f45f7061ec11dc1ff7c-1f1e4e8d339f1de9aa83",
+          "file": "Chapter03/03_Tags_Test.spec.ts",
+          "line": 31,
+          "column": 5
+        },
+        {
+          "title": "My First Playwright TypeScript Test 1",
+          "ok": false,
+          "tags": [
+            "SmokeTesting"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "webkit",
               "projectName": "webkit",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 7,
                   "parallelIndex": 2,
-                  "status": "failed",
-                  "duration": 12764,
+                  "status": "timedOut",
+                  "duration": 30090,
                   "error": {
-                    "message": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n",
-                    "stack": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:17:73\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:16:3",
-                    "location": {
-                      "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                      "column": 73,
-                      "line": 17
-                    },
-                    "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on Sign-in'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Sign my in'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick({timeout \u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m   })\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Validate error message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'alert'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Incorrect my username or password.'\u001b[39m\u001b[33m,\u001b[39m {timeout \u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m})\u001b[33m;\u001b[39m\u001b[0m"
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                   },
                   "errors": [
                     {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
                       "location": {
-                        "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                        "column": 73,
-                        "line": 17
+                        "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts",
+                        "column": 84,
+                        "line": 13
                       },
-                      "message": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n\n\n\u001b[0m \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on Sign-in'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Sign my in'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick({timeout \u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m   })\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Validate error message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'alert'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Incorrect my username or password.'\u001b[39m\u001b[33m,\u001b[39m {timeout \u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m})\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:17:73\u001b[22m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:16:3\u001b[22m"
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Playwright by Testers Talk - YouTube' })\u001b[22m\n\u001b[2m    - waiting for\" https://www.google.com/search?q=playwright+by+testers+talk&sca_esv=e8481ae40804fa8e&source=hp&ei=dM_XaYCVKtSNvr0P7quYsQE&iflsig=AFdpzrgAAAAAadfdhJgzMXTOrIkrLAzXJHEIOeW8EoEc&ved=0ahUKEwiAn5mKlOGTAxXUh…\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dplaywright%2Bby%2Btesters%2Btalk%26sca_esv%3De8481ae40804fa8e%26source%3Dhp%26ei%3DdM_XaYCVKtSNvr0P7quYsQE%26iflsig%3DA…\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'combobox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Search'\u001b[39m })\u001b[33m.\u001b[39mpress(\u001b[32m'Enter'\u001b[39m)\n \u001b[90m 12 |\u001b[39m     \u001b[90m// Click on playlist\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Playwright by Testers Talk - YouTube'\u001b[39m })\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Validate web page title\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[32m'Playwright by Testers Talk ✅ - YouTube'\u001b[39m)\n \u001b[90m 16 |\u001b[39m })\u001b[0m\n\u001b[2m    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\03_Tags_Test.spec.ts:13:84\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Navigating to URL",
-                      "duration": 8286
-                    },
-                    {
-                      "title": "Enter Username & Password",
-                      "duration": 933
-                    },
-                    {
-                      "title": "Click on Sign-in",
-                      "duration": 3014,
-                      "error": {
-                        "message": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sign my in', exact: true })\u001b[22m\n\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:17:73\n    at C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts:16:3",
-                        "location": {
-                          "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                          "column": 73,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Click on Sign-in'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Sign my in'\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick({timeout \u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m})\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m   })\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Validate error message'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'alert'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Incorrect my username or password.'\u001b[39m\u001b[33m,\u001b[39m {timeout \u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m})\u001b[33m;\u001b[39m\u001b[0m"
-                      }
-                    }
-                  ],
-                  "startTime": "2026-04-09T15:13:44.581Z",
+                  "startTime": "2026-04-09T16:10:28.127Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\test-results\\Chapter03-07_Timeout_Test-Timeout-test-webkit\\error-context.md"
+                      "path": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\test-results\\Chapter03-03_Tags_Test-My-First-Playwright-TypeScript-Test-1-webkit\\error-context.md"
                     }
-                  ],
-                  "errorLocation": {
-                    "file": "C:\\Users\\swaga\\Documents\\PlayWright_Pipeline\\tests\\Chapter03\\07_Timeout_Test.spec.ts",
-                    "column": 73,
-                    "line": 17
-                  }
+                  ]
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "c202adc94d58ae27034b-2d7e96a806bd065e7aa5",
-          "file": "Chapter03/07_Timeout_Test.spec.ts",
-          "line": 3,
+          "id": "6f45f7061ec11dc1ff7c-b8fdaa1afe8b29dc5a8f",
+          "file": "Chapter03/03_Tags_Test.spec.ts",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "title": "My First Playwright TypeScript Test 2",
+          "ok": true,
+          "tags": [
+            "SmokeTesting",
+            "RegressionTesting"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7087,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-09T16:10:28.117Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6f45f7061ec11dc1ff7c-43785bb6982bb205ad7f",
+          "file": "Chapter03/03_Tags_Test.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "My First Playwright TypeScript Test 3",
+          "ok": true,
+          "tags": [
+            "RegressionTesting"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4936,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-09T16:10:35.348Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6f45f7061ec11dc1ff7c-76c8e2f7f0d8219d78c7",
+          "file": "Chapter03/03_Tags_Test.spec.ts",
+          "line": 31,
           "column": 5
         }
       ]
@@ -379,11 +552,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-09T15:13:43.174Z",
-    "duration": 14480.411,
-    "expected": 0,
+    "startTime": "2026-04-09T16:10:13.123Z",
+    "duration": 45270.776,
+    "expected": 4,
     "skipped": 0,
-    "unexpected": 3,
+    "unexpected": 5,
     "flaky": 0
   }
 }
