@@ -10,7 +10,7 @@ test('Test 1', { tag: '@PlaywrightWithGitHubActions' }, async ({ page }) => {
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     // Click on playlist
-    await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
+    await page.getByRole('link', { name: /Playwright by Testers Talk/i }).first().click()
     // Validate web page title
     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
 })
@@ -36,7 +36,7 @@ test.only('Test 3', async ({ page }) => {
     await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk')
     await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     // Click on playlist
-    await page.getByRole('link', { name: 'Playwright by Testers Talk - YouTube' }).click()
+    await page.getByRole('link', { name: /Playwright by Testers Talk/i }).first().click()
     // Validate web page title
     await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube')
 })
